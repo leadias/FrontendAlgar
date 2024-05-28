@@ -1,0 +1,67 @@
+       <div style="display: flex; justify-content: space-between; align-items: center;" class="inputicon" >
+         <div class="form-group">
+            <label for="">Productos : </label>
+            <select [(ngModel)]="product" id="product" name="product" class="d-inline-block form-control m-auto">
+                <option *ngFor="let list of lists" [ngValue]="list" >{{list.nombre}}</option>
+            </select>
+        </div>
+        <div style="margin-right:65% ;">
+            <button style="background-color:blue ;color: aliceblue;" (click)="addProduct()" type="button">Agregar</button>
+        </div>
+       </div>
+       <br>
+       <p>Informacion productos seleccionados</p>
+
+       <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">Nombre</th>
+                <th scope="col">Valor</th>
+                <th scope="col">Descripcion</th>
+            </tr>
+        </thead>
+        <tbody *ngFor="let list of listsPrroductsCheck">
+                <tr>
+                    <th scope="row">{{list.nombre}}</th>
+                    <th scope="row">{{list.valor}}</th>
+                    <th scope="row">{{list.descripcion}}</th>
+                </tr>
+        </tbody>
+    </table>
+    <br>
+    <div style="display: inline-block; justify-content: space-between; align-items: center;margin-left: 90%;" class="inputicon" >
+    <p>Total productos: </p>
+    <p>{{total}}</p>
+    </div>
+    <br>
+    <br>
+    <br>
+    <div style="display: flex; justify-content: space-between; align-items: center;margin-left: 65%;">
+        <button (click)="removeProduct()"  style="border: rgb(32, 140, 235);background-color: rgb(206, 34, 34);border-radius: 15px;color: rgb(255, 255, 255); width: 35%;margin-left: 25%;" type="button">Borrar productos</button>
+        <button data-bs-target="#exampleModalToggle" data-bs-toggle="modal" data-bs-dismiss="modal" style="border: rgb(32, 140, 235);background-color: blue;border-radius: 15px;color: white; width: 35%;" type="button">Comprar</button>
+    </div>
+
+    <div class="modal fade" id="exampleModalToggle" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalToggleLabel">Realizar pedido</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <label>Identificacion:</label>
+              <input type="text" [(ngModel)]="identification" id="identification" name="identification" >
+            </div>
+            <div class="modal-body">
+              <label >Direccion:</label>
+              <input type="text" [(ngModel)]="direccion" id="direccion" name="direccion" >
+            </div>
+            <div class="modal-footer">
+              <button (click)="createItem()" class="btn btn-primary"  data-bs-dismiss="modal" aria-label="Close" >Realizar compra</button>
+            </div>
+          </div>
+        </div>
+      </div>
+       
+
+

@@ -1,0 +1,42 @@
+/* You can add global styles to this file, and also import other style files */
+/* You can add global styles to this file, and also import other style files */
+* {
+    font-family: Ubuntu, Arial, sans-serif;
+}
+body {
+    margin: 70px;
+    background: #ebebeb;
+}
+h3{
+    text-align: center;
+}
+h4 {
+    color: #786e6d;
+    font-size: 18px;
+}
+a{
+    text-decoration: none;
+    line-height: 21px;
+}
+p {
+    color: #8b8a8a;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 21px;
+}
+.small {
+    color: #8b8a8a;
+    font-size: 14px;
+    font-weight: 300;
+}
+.form-control {
+    display: inline-flex;
+    border-radius: 8px;
+    padding: 2px 7px;
+    background-color: #fff;
+    border-color: #ccc;
+    height: 30px;
+    outline: none;
+    width: 350px;
+}
+
